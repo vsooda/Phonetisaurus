@@ -154,7 +154,7 @@ timespec diff(timespec start, timespec end){
   return temp;
 }
 
-DEFINE_bool   (help, false, "show usage information");
+//DEFINE_bool   (help, false, "show usage information");
 void PhonetisaurusSetFlags (const char* usage, int* argc, char*** argv,
 			    bool remove_flags) {
   //Workaround for Apple's. It just skips all the options processing. 

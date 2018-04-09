@@ -4,8 +4,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
-set(OPENFST_ROOT /Users/sooda/speech/kaldi/tools/openfst)
-
 ADD_DEFINITIONS(-DGIT_REVISION="hello")
 
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/src/3rdparty
@@ -14,10 +12,11 @@ INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/src/3rdparty
         ${PROJECT_SOURCE_DIR}/src/include
         ${PROJECT_SOURCE_DIR}/src/3rdparty/utfcpp
         ${PROJECT_SOURCE_DIR}/src/3rdparty/utfcpp/utf8
-        ${OPENFST_ROOT}/include
+        ${PROJECT_SOURCE_DIR}/src/3rdparty/openfst/src/include
         )
 
-link_directories(${OPENFST_ROOT}/lib)
+#link_directories(${OPENFST_ROOT}/build/src/lib)
+set(CMAKE_MACOSX_RPATH 1)
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     message("cppmary build: Debug")

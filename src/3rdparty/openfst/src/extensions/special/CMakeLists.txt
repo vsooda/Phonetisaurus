@@ -20,6 +20,11 @@ if(HAVE_BIN)
     fst
     ${CMAKE_DL_LIBS}
  )
+  install(TARGETS fstspecial-bin
+          LIBRARY DESTINATION lib
+          RUNTIME DESTINATION bin
+          ARCHIVE DESTINATION lib
+          )
 endif(HAVE_BIN)
 
 
@@ -38,7 +43,7 @@ target_link_libraries(fstspecial
   fst
 )
 
-install(TARGETS fstspecial fstspecial-bin
+install(TARGETS fstspecial
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
   ARCHIVE DESTINATION lib
