@@ -1,0 +1,10 @@
+MACRO(add_example name)
+    ADD_EXECUTABLE(${name} ${name}.cc)
+    TARGET_LINK_LIBRARIES(${name} fst phonetisaurus)
+ENDMACRO()
+
+add_example(phonetisaurus-align)
+add_example(phonetisaurus-arpa2wfst)
+add_example(phonetisaurus-g2pfst)
+add_example(phonetisaurus-g2prnn)
+add_example(rnnlm)
